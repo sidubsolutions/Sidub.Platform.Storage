@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<IsPackable>false</IsPackable>
+		<EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+
+		<AssemblyName>Sidub.Platform.Storage.Test</AssemblyName>
+		<RootNamespace>Sidub.Platform.Storage.Test</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.11.1" />
+		<PackageReference Include="MSTest.TestAdapter" Version="3.6.0" />
+		<PackageReference Include="MSTest.TestFramework" Version="3.6.0" />
+		<PackageReference Include="System.Linq" Version="4.3.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Storage\Storage.csproj" />
+	</ItemGroup>
+
+</Project>

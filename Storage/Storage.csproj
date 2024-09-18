@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<LangVersion>latest</LangVersion>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		
+		<AssemblyName>Sidub.Platform.Storage</AssemblyName>
+		<RootNamespace>Sidub.Platform.Storage</RootNamespace>
+
+		<PackageIcon>icon.png</PackageIcon>
+		<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+
+		<!-- Workaround: https://github.com/dotnet/sourcelink - Azure Repos not supporting symbol packages -->
+		<AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+		<UserSecretsId>75f929b6-b884-4b97-bc0d-302612f6b8c6</UserSecretsId>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="..\icon.png" Pack="true" PackagePath="\" Visible="False" />
+		<None Include="..\LICENSE.txt" Pack="true" PackagePath="\" Visible="False" />
+		<None Include="..\README.md" Pack="true" PackagePath="\" Visible="False" />
+
+		<PackageReference Include="Sidub.Platform.Core" Version="1.9.9" />
+		<PackageReference Include="Sidub.Platform.Filter" Version="1.1.8" />
+	</ItemGroup>
+
+</Project>
