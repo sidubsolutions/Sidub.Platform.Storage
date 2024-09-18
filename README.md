@@ -1,4 +1,4 @@
-# Sidub Platform - Authentication
+# Sidub Platform - Storage
 
 This repository contains the storage module for the Sidub Platform. It provides
 create, read, update, delete and related capabilities against entity concepts.
