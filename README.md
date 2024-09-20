@@ -30,7 +30,7 @@ parameters are assigned defaults. Each query object must implement the
 `IFilter? GetFilter()` method which is responsible for building a filter
 statement leveraging the parameter values within the query object.
 
----csharp
+```csharp
 public class SalesOrderByOrderNumberQuery : IRecordQuery<SalesOrder>
 {
     public string OrderNumber { get; }
@@ -49,13 +49,13 @@ public class SalesOrderByOrderNumberQuery : IRecordQuery<SalesOrder>
         return filter;
     }
 }
----
+```
 
 Queries are executed by calling the `Execute` method on the `IQueryService`
 service, providing the query to execute and the service reference to execute
 against.
 
----csharp
+```csharp
 public class OrderService
 {
     private readonly StorageServiceReference _serviceReference = new
@@ -74,7 +74,7 @@ public class OrderService
         return salesOrder;
     }
 }
----
+```
 
 ### Saving Entities
 Entities are saved by using the `SaveEntityCommand<TEntity>` command object.
@@ -86,7 +86,7 @@ will be returned denoting whether the save was successful and providing the save
 entity (particularly useful when the save operation may have modified or generated
 additional entity properties).
 
----csharp
+```csharp
 public class OrderService
 {
     private readonly StorageServiceReference _serviceReference = new
@@ -109,7 +109,7 @@ public class OrderService
         return saveResult.Result;
     }
 }
----
+```
 
 ### Deleting Entities
 Entities are deleted using the `DeleteEntityCommand<TEntity>` command object.
@@ -119,7 +119,7 @@ method, passing the entity to delete. To execute the delete command, call the
 and the service reference to execute against. A `DeleteEntityResponse` will be
 returned denoting whether the delete was successful.
 
----csharp
+```csharp
 public class OrderService
 {
     private readonly StorageServiceReference _serviceReference = new
@@ -140,7 +140,7 @@ public class OrderService
             throw an Exception("Error encountered during order delete.");
     }
 }
----
+```
 
 ### Entity Relationships
 > [!WARNING]
